@@ -8,6 +8,7 @@ namespace Travel_Experts_MVC.Controllers
 {
     public class HomeController : Controller
     {
+        private TravelExpertsEntities db = new TravelExpertsEntities(); // context object
         public ActionResult Index()
         {
             return View();
@@ -25,6 +26,12 @@ namespace Travel_Experts_MVC.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Packages()
+        {
+            List<Package> packages = db.Packages.ToList(); // gets data from the database via context object
+            return View(packages);
         }
     }
 }

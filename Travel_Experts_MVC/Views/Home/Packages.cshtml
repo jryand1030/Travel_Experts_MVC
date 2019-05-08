@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Travel_Experts_MVC.Package>
+
+@{
+    ViewBag.Title = "Packages";
+}
+
+<h2>Packages</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PkgName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PkgStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PkgEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PkgDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PkgBasePrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PkgName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PkgStartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PkgEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PkgDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PkgBasePrice)
+        </td>
+        <td>
+
+
+        </td>
+    </tr>
+}
+
+</table>
