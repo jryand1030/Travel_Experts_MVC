@@ -9,6 +9,18 @@ namespace Travel_Experts_MVC.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+
+        //add custom registration fields
+        public string CustfirstName { get; set; }
+        public string CustLastName { get; set; }
+        public string CustAddress { get; set; }
+        public string CustCity { get; set; }
+        public string CustProv { get; set; }
+        public string CustPostal { get; set; }
+        public string CustCountry { get; set; }
+        public string CustHomePhone { get; set; }
+     
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

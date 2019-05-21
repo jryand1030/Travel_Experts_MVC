@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Travel_Experts_MVC.Models;
+ 
 
 namespace Travel_Experts_MVC.Controllers
 {
@@ -151,7 +152,18 @@ namespace Travel_Experts_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser {
+                    UserName = model.CustfirstName,
+                    Email = model.Email,
+                    CustfirstName = model.CustfirstName,
+                    CustLastName = model.CustLastName,
+                    CustAddress = model.CustAddress,
+                    CustCity = model.CustCity,
+                    CustProv = model.CustProv,
+                    CustCountry = model.CustCountry,
+                    CustPostal = model.CustPostal,
+                    CustHomePhone = model.CustHomePhone
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

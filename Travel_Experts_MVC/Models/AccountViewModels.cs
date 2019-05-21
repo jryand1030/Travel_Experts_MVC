@@ -67,18 +67,45 @@ namespace Travel_Experts_MVC.Models
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
-        public string Email { get; set; }
+        public string Email           { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
-        public string Password { get; set; }
+        public string Password        { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        
+        [Display(Name ="CustfirstName")]
+        public string CustfirstName   { get; set; }
+
+        [Display(Name = "CustLastName")]
+        public string CustLastName    { get; set; }
+
+        [Display(Name = "CustAddress")]
+        public string CustAddress     { get; set; }
+
+        [Display(Name = "CustCity")]
+        public string CustCity        { get; set; }
+
+        [Display(Name = "CustProv")]
+        public string CustProv { get; set; }
+
+        [Display(Name = "CustPostal")]
+        public string CustPostal { get; set; }
+
+        [Display(Name = "CustCountry")]
+        public string CustCountry { get; set; }
+
+        [Required]
+        [Display(Name = "CustHomePhone")]
+        public string CustHomePhone { get; set; }
+
     }
 
     public class ResetPasswordViewModel
